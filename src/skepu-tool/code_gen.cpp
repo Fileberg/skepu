@@ -145,7 +145,8 @@ std::string replaceReferencesToOtherUFs(Backend backend, UserFunction &UF, std::
 {
 	SkePULog() << "Modifying UF code for " << nameFunc(UF) << "\n";
 	const FunctionDecl *f = UF.astDeclNode;
-	if (f->getTemplatedKind() == FunctionDecl::TK_FunctionTemplateSpecialization)
+	if (f->getTemplatedKind() == FunctionDecl::TK_FunctionTemplateSpecialization
+            && f->getTemplateInstantiationPattern())
 		f = f->getTemplateInstantiationPattern();
 
 	// Find references to other userfunctions

@@ -81,37 +81,48 @@ UserFunction *HandleLambdaArg(Expr *ArgExpr, VarDecl *d)
 
 const Skeleton::Type* DeclIsValidSkeleton(VarDecl *d)
 {
-	if (isa<ParmVarDecl>(d))
-		return nullptr;
+	if (isa<ParmVarDecl>(d)) {
+            return nullptr;
+        }
 
-	if (d->isThisDeclarationADefinition() != VarDecl::DefinitionKind::Definition)
-		return nullptr;
+	if (d->isThisDeclarationADefinition() != VarDecl::DefinitionKind::Definition) {
+	    return nullptr;
+        }
 
 	Expr *InitExpr = d->getInit();
-	if (!InitExpr)
-		return nullptr;
+	if (!InitExpr) {
+	    return nullptr;
+        }
 
 	if (auto *CleanUpExpr = dyn_cast<ExprWithCleanups>(InitExpr))
 		InitExpr = CleanUpExpr->getSubExpr();
 
-	auto *ConstructExpr = dyn_cast<CXXConstructExpr>(InitExpr);
-	if (!ConstructExpr || ConstructExpr->getConstructionKind() != CXXConstructExpr::ConstructionKind::CK_Complete)
-		return nullptr;
+        CallExpr *CExpr = nullptr;
+        if (auto *ConstructExpr = dyn_cast<CXXConstructExpr>(InitExpr)) {
+            if (ConstructExpr->getConstructionKind() != CXXConstructExpr::ConstructionKind::CK_Complete) {
+                return nullptr;
+            }
+            if (ConstructExpr->getNumArgs() == 0) {
+                return nullptr;
+            }
 
-	if (ConstructExpr->getNumArgs() == 0)
-		return nullptr;
+            auto *TempExpr = ConstructExpr->getArgs()[0];
 
-	auto *TempExpr = ConstructExpr->getArgs()[0];
+            if (auto *MatTempExpr = dyn_cast<MaterializeTemporaryExpr>(TempExpr))
+                    TempExpr = MatTempExpr->GetTemporaryExpr();
 
-	if (auto *MatTempExpr = dyn_cast<MaterializeTemporaryExpr>(TempExpr))
-		TempExpr = MatTempExpr->GetTemporaryExpr();
+            if (auto *BindTempExpr = dyn_cast<CXXBindTemporaryExpr>(TempExpr))
+                    TempExpr = BindTempExpr->getSubExpr();
 
-	if (auto *BindTempExpr = dyn_cast<CXXBindTemporaryExpr>(TempExpr))
-		TempExpr = BindTempExpr->getSubExpr();
+            CExpr = dyn_cast<CallExpr>(TempExpr);
+        } else if (auto* BindTempExpr = dyn_cast<CXXBindTemporaryExpr>(InitExpr)) {
+            auto* TempExpr = BindTempExpr->getSubExpr();
+            CExpr = dyn_cast<CallExpr>(TempExpr);
+        }
 
-	CallExpr *CExpr = dyn_cast<CallExpr>(TempExpr);
-	if (!CExpr)
-		return nullptr;
+	if (!CExpr) {
+            return nullptr;
+        }
 
 	const FunctionDecl *Callee = CExpr->getDirectCallee();
 	const Type *RetType = Callee->getReturnType().getTypePtr();
@@ -122,14 +133,16 @@ const Skeleton::Type* DeclIsValidSkeleton(VarDecl *d)
 	if (auto *ElabType = dyn_cast<ElaboratedType>(RetType))
 		RetType = ElabType->getNamedType().getTypePtr();
 
-	if (!isa<TemplateSpecializationType>(RetType))
-		return nullptr;
+	if (!isa<TemplateSpecializationType>(RetType)) {
+            return nullptr;
+        }
 
 	const TemplateDecl *Template = RetType->getAs<TemplateSpecializationType>()->getTemplateName().getAsTemplateDecl();
 	std::string TypeName = Template->getNameAsString();
 
-	if (Skeletons.find(TypeName) == Skeletons.end())
-		return nullptr;
+	if (Skeletons.find(TypeName) == Skeletons.end()) {
+            return nullptr;
+        }
 	
 //	d->dump();
 
@@ -146,11 +159,16 @@ bool HandleSkeletonInstance(VarDecl *d)
 	if (isa<ExprWithCleanups>(InitExpr))
 		InitExpr = dyn_cast<ExprWithCleanups>(InitExpr)->getSubExpr();
 
+        Expr* TempExpr;
 	CXXConstructExpr *ConstructExpr = dyn_cast<CXXConstructExpr>(InitExpr);
-	if (!ConstructExpr || ConstructExpr->getConstructionKind() != CXXConstructExpr::ConstructionKind::CK_Complete)
+        if (ConstructExpr) {
+            if (ConstructExpr->getConstructionKind() != CXXConstructExpr::ConstructionKind::CK_Complete) {
 		SkePUAbort("Not a complete constructor");
-
-	Expr *TempExpr = dyn_cast<MaterializeTemporaryExpr>(ConstructExpr->getArgs()[0])->GetTemporaryExpr();
+            }
+            TempExpr = dyn_cast<MaterializeTemporaryExpr>(ConstructExpr->getArgs()[0])->GetTemporaryExpr();
+        } else {
+            TempExpr = InitExpr;
+        }
 
 	 if (isa<CXXBindTemporaryExpr>(TempExpr))
 		TempExpr = dyn_cast<CXXBindTemporaryExpr>(TempExpr)->getSubExpr();
@@ -278,10 +296,6 @@ bool SkePUASTVisitor::VisitVarDecl(VarDecl *d)
 			blasEnd = d->getSourceRange().getEnd();
 //		d->dump();
 	}
-	
-	
-	
-	
 	
 	
 	// Change this condition to check for skeleon class names, (and namespace too?)

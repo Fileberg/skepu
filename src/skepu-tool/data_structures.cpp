@@ -65,7 +65,10 @@ public:
 		}
 
 		FunctionDecl *Func = c->getDirectCallee();
-		std::string name = Func->getName();
+                std::string name = "";
+                if (Func->getDeclName().getNameKind() == DeclarationName::Identifier) {
+                    name = Func->getName();
+                }
 
 		if (name == "")
 		{
