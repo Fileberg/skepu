@@ -184,6 +184,12 @@ function(skepu_add_executable name)
 	# Add a custom target (per SkePU source file) so that cmake can procompile
 	# SkePU sources for us.
 	foreach(_file IN LISTS _skepu_src)
+                cmake_path(IS_ABSOLUTE _file _absolute)
+                if (${_absolute})
+                    set(_file_src ${_file})
+                else()
+                    set(_file_src ${CMAKE_CURRENT_LIST_DIR}/${_file})
+                endif()
 		get_filename_component(_file_name ${_file} NAME_WE)
 		set(_target_name "${name}_${_file_name}_precompiled")
 		set(_target_byprod "${name}_${_file_name}_precompiled${_skepu_ext}")
@@ -197,11 +203,11 @@ function(skepu_add_executable name)
 					-name ${_target_name}
 					-dir=${_output_dir}
 					-fnames="${_skepu_fnames}"
-					${CMAKE_CURRENT_LIST_DIR}/${_file}
+					${_file_src}
 					--
-					-std=c++11
+					-std=c++17
 					"${_include_generators}"
-			DEPENDS ${CMAKE_CURRENT_LIST_DIR}/${_file}
+			DEPENDS ${_file_src}
 			BYPRODUCTS ${_output_dir}/${_target_byprod}
 			COMMAND_EXPAND_LISTS
 			)
