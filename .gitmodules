@@ -1,6 +1,3 @@
 [submodule "llvm"]
 	path = llvm
 	url = https://github.com/llvm/llvm-project.git
-[submodule "skepu-headers"]
-	path = skepu-headers
-	url = https://github.com/skepu/skepu-headers.git
