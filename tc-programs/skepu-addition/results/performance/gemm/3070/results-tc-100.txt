@@ -1,0 +1,60 @@
+512 10 100 0
+C using -tc- took: 22109
+C using -tc- took: 25376
+C using -tc- took: 22534
+C using -tc- took: 26769
+C using -tc- took: 24662
+C using -tc- took: 24441
+C using -tc- took: 22932
+C using -tc- took: 23632
+C using -tc- took: 22564
+C using -tc- took: 23160
+C using -tc- took: 22393
+1024 10 100 0
+C using -tc- took: 145724
+C using -tc- took: 143714
+C using -tc- took: 143795
+C using -tc- took: 139414
+C using -tc- took: 143728
+C using -tc- took: 143923
+C using -tc- took: 138791
+C using -tc- took: 144595
+C using -tc- took: 143324
+C using -tc- took: 138088
+C using -tc- took: 143152
+2048 10 100 0
+C using -tc- took: 1394759
+C using -tc- took: 1374096
+C using -tc- took: 1439267
+C using -tc- took: 1495064
+C using -tc- took: 1433732
+C using -tc- took: 1544918
+C using -tc- took: 1359419
+C using -tc- took: 1414579
+C using -tc- took: 1414292
+C using -tc- took: 1460992
+C using -tc- took: 1417984
+4096 10 100 0
+C using -tc- took: 11189885
+C using -tc- took: 11175115
+C using -tc- took: 11177353
+C using -tc- took: 11190145
+C using -tc- took: 11184050
+C using -tc- took: 11255500
+C using -tc- took: 11186294
+C using -tc- took: 11193170
+C using -tc- took: 11196832
+C using -tc- took: 11209261
+C using -tc- took: 11239820
+8192 10 100 0
+C using -tc- took: 91302298
+C using -tc- took: 90312031
+C using -tc- took: 90042429
+C using -tc- took: 90175495
+C using -tc- took: 90215136
+C using -tc- took: 90251443
+C using -tc- took: 90282500
+C using -tc- took: 90364277
+C using -tc- took: 90407532
+C using -tc- took: 89554460
+C using -tc- took: 89765756

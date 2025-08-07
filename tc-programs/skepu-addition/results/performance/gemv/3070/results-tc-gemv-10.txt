@@ -1,0 +1,60 @@
+512 10 10 0
+y using -tc- took: 2447
+y using -tc- took: 2370
+y using -tc- took: 2309
+y using -tc- took: 2363
+y using -tc- took: 2396
+y using -tc- took: 2365
+y using -tc- took: 2657
+y using -tc- took: 2395
+y using -tc- took: 3656
+y using -tc- took: 2755
+y using -tc- took: 2292
+1024 10 10 0
+y using -tc- took: 5339
+y using -tc- took: 5433
+y using -tc- took: 4318
+y using -tc- took: 5534
+y using -tc- took: 4321
+y using -tc- took: 5395
+y using -tc- took: 5332
+y using -tc- took: 4262
+y using -tc- took: 4385
+y using -tc- took: 4664
+y using -tc- took: 5359
+2048 10 10 0
+y using -tc- took: 8365
+y using -tc- took: 8338
+y using -tc- took: 8223
+y using -tc- took: 10405
+y using -tc- took: 9420
+y using -tc- took: 8305
+y using -tc- took: 8461
+y using -tc- took: 9834
+y using -tc- took: 8311
+y using -tc- took: 8293
+y using -tc- took: 8231
+4096 10 10 0
+y using -tc- took: 21794
+y using -tc- took: 21863
+y using -tc- took: 26886
+y using -tc- took: 27025
+y using -tc- took: 26819
+y using -tc- took: 26179
+y using -tc- took: 26277
+y using -tc- took: 22277
+y using -tc- took: 25739
+y using -tc- took: 22224
+y using -tc- took: 26743
+8192 10 10 0
+y using -tc- took: 136031
+y using -tc- took: 169121
+y using -tc- took: 150059
+y using -tc- took: 138219
+y using -tc- took: 138865
+y using -tc- took: 137732
+y using -tc- took: 158161
+y using -tc- took: 138401
+y using -tc- took: 135667
+y using -tc- took: 156927
+y using -tc- took: 149656

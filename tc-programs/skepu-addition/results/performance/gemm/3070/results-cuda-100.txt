@@ -1,0 +1,49 @@
+512 10 100 -1
+C using cuda took: 51516
+C using cuda took: 50956
+C using cuda took: 58901
+C using cuda took: 57183
+C using cuda took: 55474
+C using cuda took: 70964
+C using cuda took: 65540
+C using cuda took: 52840
+C using cuda took: 51294
+C using cuda took: 50059
+C using cuda took: 64492
+1024 10 100 -1
+C using cuda took: 712878
+C using cuda took: 705774
+C using cuda took: 567986
+C using cuda took: 556951
+C using cuda took: 552761
+C using cuda took: 555669
+C using cuda took: 556887
+C using cuda took: 790459
+C using cuda took: 553533
+C using cuda took: 555027
+C using cuda took: 557186
+2048 10 100 -1
+C using cuda took: 4318210
+C using cuda took: 4313199
+C using cuda took: 4316392
+C using cuda took: 4317692
+C using cuda took: 4321090
+C using cuda took: 4319324
+C using cuda took: 4320324
+C using cuda took: 4322396
+C using cuda took: 4323081
+C using cuda took: 4330871
+C using cuda took: 4245130
+4096 10 100 -1
+C using cuda took: 35104903
+C using cuda took: 34797507
+C using cuda took: 34962331
+C using cuda took: 35223988
+C using cuda took: 35458961
+C using cuda took: 34871171
+C using cuda took: 35826262
+C using cuda took: 35580755
+C using cuda took: 35638761
+C using cuda took: 35831360
+C using cuda took: 35425132
+8192 10 100 -1

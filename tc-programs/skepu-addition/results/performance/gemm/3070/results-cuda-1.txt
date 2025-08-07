@@ -1,0 +1,60 @@
+512 10 1
+C using cuda took: 630
+C using cuda took: 563
+C using cuda took: 548
+C using cuda took: 1432
+C using cuda took: 558
+C using cuda took: 551
+C using cuda took: 544
+C using cuda took: 546
+C using cuda took: 547
+C using cuda took: 556
+C using cuda took: 546
+1024
+C using cuda took: 5511
+C using cuda took: 5507
+C using cuda took: 5505
+C using cuda took: 5509
+C using cuda took: 5509
+C using cuda took: 5505
+C using cuda took: 5507
+C using cuda took: 5532
+C using cuda took: 5512
+C using cuda took: 5510
+C using cuda took: 5515
+2048
+C using cuda took: 41493
+C using cuda took: 43763
+C using cuda took: 43691
+C using cuda took: 43691
+C using cuda took: 43729
+C using cuda took: 43579
+C using cuda took: 43426
+C using cuda took: 43621
+C using cuda took: 43595
+C using cuda took: 43519
+C using cuda took: 43470
+4096
+C using cuda took: 334156
+C using cuda took: 333509
+C using cuda took: 337002
+C using cuda took: 336002
+C using cuda took: 338399
+C using cuda took: 339385
+C using cuda took: 335877
+C using cuda took: 339146
+C using cuda took: 337523
+C using cuda took: 337226
+C using cuda took: 337793
+8192
+C using cuda took: 5523385
+C using cuda took: 5297631
+C using cuda took: 5277987
+C using cuda took: 5687382
+C using cuda took: 5299544
+C using cuda took: 5279381
+C using cuda took: 5301671
+C using cuda took: 5730041
+C using cuda took: 5334764
+C using cuda took: 5312150
+C using cuda took: 5390580

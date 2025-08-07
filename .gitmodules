@@ -4,3 +4,6 @@
 [submodule "skepu-headers"]
 	path = skepu-headers
 	url = git@github.com:Fileberg/skepu-headers.git
+[submodule "cutlass"]
+	path = cutlass
+	url = git@github.com:NVIDIA/cutlass.git

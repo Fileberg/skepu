@@ -1,0 +1,60 @@
+512 10 1 1
+y using cuda took: 58
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 57
+y using cuda took: 58
+y using cuda took: 57
+y using cuda took: 58
+1024 10 1 1
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 111
+y using cuda took: 113
+y using cuda took: 111
+y using cuda took: 111
+2048 10 1 1
+y using cuda took: 217
+y using cuda took: 218
+y using cuda took: 217
+y using cuda took: 217
+y using cuda took: 218
+y using cuda took: 217
+y using cuda took: 218
+y using cuda took: 217
+y using cuda took: 218
+y using cuda took: 217
+y using cuda took: 217
+4096 10 1 1
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+y using cuda took: 431
+8192 10 1 1
+y using cuda took: 1388
+y using cuda took: 1383
+y using cuda took: 1385
+y using cuda took: 1370
+y using cuda took: 1380
+y using cuda took: 1374
+y using cuda took: 1377
+y using cuda took: 1371
+y using cuda took: 1381
+y using cuda took: 1369
+y using cuda took: 1371
