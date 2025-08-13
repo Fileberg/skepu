@@ -24,14 +24,14 @@ BACKEND_FLAGS = -O3 -g #-DSKEPU_DEBUG=3 #-DSKEPU_ENABLE_EXCEPTIONS
 OPENCL_FLAGS = -I /usr/local/cuda/include -L /usr/local/cuda/lib64/ -lOpenCL
 
 # path to Clang source directory (repository root)
-CLANG_INCLUDE = $(PWD)/../llvm/clang/lib/Headers
+CLANG_INCLUDE = $(PWD)/../../llvm/clang/lib/Headers
 
 # path to the SkePU sources
-SKEPU_INCLUDE = $(PWD)/../skepu-headers/src
+SKEPU_INCLUDE = $(PWD)/../../skepu-headers/src
 CUTLASS_INCLUDE =
 CUTLASS_INCLUDE += -I /usr/local/cuda/include
-CUTLASS_INCLUDE += -I $(PWD)/../cutlass/include
-CUTLASS_INCLUDE += -I $(PWD)/../cutlass/tools/util/include
+CUTLASS_INCLUDE += -I $(PWD)/../../cutlass/include
+CUTLASS_INCLUDE += -I $(PWD)/../../cutlass/tools/util/include
 CUTLASS_INCLUDE += -gencode arch=compute_80,code=sm_80
 CXX = g++-10
 SEQ_CXX = g++-10
@@ -56,7 +56,7 @@ CXX = nvcc
 endif
 
 # Location of SkePU precompiler binary.
-SKEPU = $(PWD)/../build/llvm/bin/skepu-tool
+SKEPU = $(PWD)/../../build/llvm/bin/skepu-tool
 
 
 # ---------------------------------------------------------------------------- #

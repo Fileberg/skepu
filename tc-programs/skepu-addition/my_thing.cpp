@@ -103,7 +103,7 @@ void my_gemm() {
     // std::cout << "====================================\npost c1: " << std::endl;
     // print_matrix(c1);
 
-    skepu::tcblas::gemm_tc_cutlass_fastF32(
+    skepu::tcblas::gemm(
         no_trans,
         no_trans,
         M,
@@ -187,7 +187,7 @@ void my_gemv() {
     // std::cout << y.isModified_CU(0) << std::endl;
     // #endif // SKEPU_CUDA
 
-    skepu::tcblas::gemv_tc_cutlass_fastF32(
+    skepu::tcblas::gemv(
         trans,
         M,
         N,
@@ -238,7 +238,7 @@ void my_dot() {
     // std::cout << y.isModified_CU(0) << std::endl;
     // #endif // SKEPU_CUDA
 
-    auto answer = skepu::tcblas::dot_tc_cutlass_fastF32(
+    auto answer = skepu::tcblas::dot(
         N,
         x,
         1,
@@ -268,7 +268,7 @@ void thread_entry_gemv_tc(float* device_pointer_A, float* device_pointer_x, floa
     skepu::blas::Op no_trans = skepu::blas::Op::NoTrans;
 // #ifndef SKEPU_NO_UPDATE_HOST
 // #define SKEPU_NO_UPDATE_HOST
-    skepu::tcblas::gemv_tc_cutlass_fastF32(
+    skepu::tcblas::gemv(
         no_trans,
         m,
         n,
@@ -489,7 +489,7 @@ void thread_entry_gemm_tc(float* device_pointer_A, float* device_pointer_B, floa
 // #ifndef SKEPU_NO_UPDATE_HOST
 // #define SKEPU_NO_UPDATE_HOST
 
-    skepu::tcblas::gemm_tc_cutlass_fastF32(
+    skepu::tcblas::gemm(
         no_trans,
         no_trans,
         m,
