@@ -957,7 +957,7 @@ int main(int argc, char **argv)
     checkCudaErrors(cudaEventElapsedTime(&milliseconds, start, stop));
 
     iterations += 2;
-    printf("Time: %f ms\tIterations: %d\tAverage time: %f\t", milliseconds, iterations, double(milliseconds) / double(iterations));
+    printf("Time: %f ms\tIterations: %d\tAverage time (ms): %f\t", milliseconds, iterations, double(milliseconds) / double(iterations));
     printf("TFLOPS: %.2f\n", (((double)M_GLOBAL * N_GLOBAL * K_GLOBAL * 2)/(milliseconds/1000./iterations)) / 1e12);
 
     // for printing to see if the result is correct!

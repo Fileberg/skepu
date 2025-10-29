@@ -1,0 +1,1 @@
+All results in this folder are execution times in seconds (s)

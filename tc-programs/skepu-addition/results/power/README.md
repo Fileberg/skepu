@@ -1,0 +1,1 @@
+All results in this folder are in watt (W) and were taken across one execution of power_usage_tests.sh
